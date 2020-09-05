@@ -1,6 +1,6 @@
 <?php
 
-namespace Coroowicaksono\ChartJsIntegration\Api;
+namespace Coroowicaksono\NovaFullCalendar\Api;
 
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 

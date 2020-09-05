@@ -1,6 +1,6 @@
 <?php
 
-namespace Coroowicaksono\FullCalendar;
+namespace Coroowicaksono\NovaFullCalendar;
 
 use Laravel\Nova\Card;
 

@@ -21,14 +21,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Coroowicaksono\\ChartJsIntegration\\": "src/",
-            "Coroowicaksono\\ChartJsIntegration\\Api\\": "src/api"
+            "Coroowicaksono\\NovaFullCalendar\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Coroowicaksono\\ChartJsIntegration\\CardServiceProvider"
+                "Coroowicaksono\\NovaFullCalendar\\CardServiceProvider"
             ]
         }
     },
