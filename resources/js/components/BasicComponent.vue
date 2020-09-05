@@ -34,7 +34,7 @@
             return {
                 resources: this.card.resource !== null ? this.card.resource : '',
                 calendarOptions: {
-                    events: Object.values(this.card.model),
+                    events: Object.values(this.card.series),
                     plugins: [ dayGridPlugin, interactionPlugin ],
                     initialView: 'dayGridMonth',
                     dateClick: this.handleDateClick,
