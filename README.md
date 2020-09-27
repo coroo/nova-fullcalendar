@@ -1,30 +1,45 @@
-# Nova ChartJS - Laravel Nova Package
+# Nova FullCalendar - Laravel Nova Package
 
-A Laravel Nova Dashboard with Chart JS | See [:blue_book:Documentation Page](https://coroo.github.io/nova-chartjs/)
+A Laravel Nova Dashboard with FullCalendar JS | See [:blue_book:Documentation Page](https://coroo.github.io/nova-fullcalendar/)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/coroowicaksono/chart-js-integration)](https://packagist.org/packages/coroowicaksono/chart-js-integration)
-[![Total Downloads](https://img.shields.io/packagist/dt/coroowicaksono/chart-js-integration)](https://packagist.org/packages/coroowicaksono/chart-js-integration)
-[![License](https://img.shields.io/github/languages/top/coroo/nova-chartjs)](https://packagist.org/packages/coroowicaksono/chart-js-integration)
-[![State Status](https://img.shields.io/github/deployments/coroo/nova-chartjs/github-pages)](https://packagist.org/packages/coroowicaksono/chart-js-integration)
-[![License](https://img.shields.io/packagist/l/coroowicaksono/chart-js-integration)](https://github.com/coroo/chart-js-integration/blob/master/LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/coroowicaksono/nova-fullcalendar)](https://packagist.org/packages/coroowicaksono/nova-fullcalendar)
+[![Total Downloads](https://img.shields.io/packagist/dt/coroowicaksono/nova-fullcalendar)](https://packagist.org/packages/coroowicaksono/nova-fullcalendar)
+[![License](https://img.shields.io/github/languages/top/coroo/nova-fullcalendar)](https://packagist.org/packages/coroowicaksono/nova-fullcalendar)
+[![State Status](https://img.shields.io/github/deployments/coroo/nova-fullcalendar/github-pages)](https://packagist.org/packages/coroowicaksono/nova-fullcalendar)
+[![License](https://img.shields.io/packagist/l/coroowicaksono/nova-fullcalendar)](https://github.com/coroo/nova-fullcalendar/blob/master/LICENSE)
 
-[![Listed in Awesome ChartJS](https://camo.githubusercontent.com/13c4e50d88df7178ae1882a203ed57b641674f94/68747470733a2f2f63646e2e7261776769742e636f6d2f73696e647265736f726875732f617765736f6d652f643733303566333864323966656437386661383536353265336136336531353464643865383832392f6d656469612f62616467652e737667)](https://github.com/chartjs/awesome#integrations)
-[![License](https://img.shields.io/github/stars/coroo/nova-chartjs?style=social)](https://github.com/coroo/nova-chartjs/stargazers)
+[![License](https://img.shields.io/github/stars/coroo/nova-fullcalendar?style=social)](https://github.com/coroo/nova-fullcalendar/stargazers)
 
-> This Nova Chart JS Integration requires Nova 2.0 or higher.
+> This Nova FullCalendar JS Integration requires Nova 2.0 or higher.
 
-![Chart JS Integration in Action](https://raw.githubusercontent.com/coroo/chart-js-integration/gh-pages/assets/img/chart-js-integration.gif)
+![FullCalendar JS Integration in Action](https://raw.githubusercontent.com/coroo/nova-fullcalendar/gh-pages/assets/img/nova-fullcalendar.gif)
 
 ## Installation & Documentation
 
-:mortar_board: For better experiences, we moved documentation to : __https://coroo.github.io/nova-chartjs/__
+### Simple Installation
+
+```php
+// app/Providers/NovaServiceProvider
+protected function cards()
+{
+    $events = Event::select(DB::raw('id, nama_kegiatan as title, concat(tanggal_acara, " ", jam_acara) as date, concat(tanggal_acara, " ", jam_acara) as start, tanggal_acara as end'))
+        ->get()
+        ->toJson();
+    
+    return [
+        (new FullCalendar())
+            ->series($events)
+    ];
+}
+```
+:mortar_board: For better experiences, we moved documentation to : __https://coroo.github.io/nova-fullcalendar/__
 
 ## ChangeLog
 
-Please see [CHANGELOG](https://github.com/coroo/chart-js-integration/blob/master/CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](https://github.com/coroo/nova-fullcalendar/blob/master/CHANGELOG.md) for more information on what has changed recently.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/coroo/chart-js-integration/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/coroo/nova-fullcalendar/blob/master/LICENSE) for more information.
 
 
