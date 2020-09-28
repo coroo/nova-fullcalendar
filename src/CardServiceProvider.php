@@ -25,7 +25,7 @@ class CardServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__ . '/../resources/db/models/nfc_events.php.stub' => 'App\Models\Event.php',
+            __DIR__ . '/../resources/db/models/nfc_events.php.stub' => 'App/Models/Event.php',
         ], 'models');
 
         Nova::serving(function (ServingNova $event) {
