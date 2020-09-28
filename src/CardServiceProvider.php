@@ -20,6 +20,14 @@ class CardServiceProvider extends ServiceProvider
             $this->routes();
         });
 
+        $this->publishes([
+            __DIR__ . '/../resources/db/migrations/create_nova_full_calendar_events_table.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_nova_full_calendar_events_table.php'),
+        ], 'migrations');
+
+        $this->publishes([
+            __DIR__ . '/../resources/db/models/nfc_events.php.stub' => 'App/Models/Event.php',
+        ], 'models');
+
         Nova::serving(function (ServingNova $event) {
             Nova::script('full-calendar-script', __DIR__ . '/../dist/js/full-calendar.js');
         });
